@@ -144,7 +144,7 @@ sap-bill-validator/
 
 ```bash
 # Clone the repository
-git clone https://github.com/<username>/sap-isu-ci-bill-validator.git
+git clone https://github.com/ViditUpreti/sap-isu-ci-bill-validator.git
 cd sap-isu-ci-bill-validator
 
 # Create and activate virtual environment
@@ -233,6 +233,6 @@ Open **`http://localhost:8501`** in your browser.
 
 ## 👤 Author & Acknowledgments
 
-- **Lead Architect & Developer:** Vidit Upreti ([LinkedIn](https://linkedin.com) | [GitHub](https://github.com))
+- **Lead Architect & Developer:** Vidit Upreti ([GitHub](https://github.com/ViditUpreti))
 - **Domain Focus:** SAP S/4HANA Utilities (IS-U), SAP Convergent Invoicing (CI), FI-CA, Spanish Energy Regulations (CNMC).
 - **License:** MIT License.

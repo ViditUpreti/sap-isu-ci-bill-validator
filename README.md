@@ -202,7 +202,35 @@ python cli.py --tolerance 0.01 --exit-code-on-fail
 ```bash
 streamlit run app.py
 ```
-Open **`http://localhost:8501`** in your browser.
+Open **`http://localhost:8501`** in your browser (or access via the server's public IP).
+
+---
+
+## 🌐 Production & Cloud Deployment Guide
+
+The application is pre-configured with `.streamlit/config.toml` (binding to `address = "0.0.0.0"` and `headless = true`) and accepts dynamic cloud `$PORT` variables for seamless deployment across any hosting provider:
+
+### Option 1: Streamlit Community Cloud (Zero-Config)
+1. Go to [share.streamlit.io](https://share.streamlit.io).
+2. Connect your GitHub account and select repository **`ViditUpreti/sap-isu-ci-bill-validator`**.
+3. Set **Branch:** `main` and **Main file path:** `app.py`.
+4. Click **Deploy!** The synthetic dataset will auto-seed and launch immediately.
+
+### Option 2: Docker Container (AWS ECS / GCP Cloud Run / Azure / Local)
+```bash
+# Build the container image
+docker build -t sap-bill-validator .
+
+# Run container mapping port 8501
+docker run -d -p 8501:8501 --name sap-validator sap-bill-validator
+```
+Access at `http://<your-host-ip>:8501` or your domain.
+
+### Option 3: Render / Railway / Heroku
+The included [`Procfile`](file:///C:/Users/vidit/.gemini/antigravity/scratch/sap-bill-validator/Procfile) automatically handles dynamic cloud `$PORT` routing:
+```text
+web: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
+```
 
 ---
 

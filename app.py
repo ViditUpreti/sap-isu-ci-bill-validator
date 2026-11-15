@@ -187,6 +187,14 @@ os.makedirs(target_dir, exist_ok=True)
 os.makedirs(sap_dir, exist_ok=True)
 os.makedirs(reports_dir, exist_ok=True)
 
+# Auto-seed synthetic dataset on first cloud/container boot if empty
+if not os.path.exists(target_dir) or not os.listdir(target_dir):
+    try:
+        gen = SampleDataGenerator(BASE_DIR)
+        gen.generate_all()
+    except Exception:
+        pass
+
 
 @st.cache_data
 def run_batch_validation(amount_tol: float, outsort_thresh: float, layout_tol: float):

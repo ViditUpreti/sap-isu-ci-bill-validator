@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Type Checking
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE & OS Metadata
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment Variables & Secrets
+.env
+.env.*
+*.local
+*.pem
+*.key
+*.cert
+
+# Temporary Run Outputs & Uploads
+temp_uploads/
+output_reports/
+reports/*.xlsx
+reports/*.html
+reports/visual_diffs/
+reports/test_diffs/
+reports/*.tmp
+
+# Real Client Data Guard (Only synthetic datasets are allowed)
+client_data/
+real_bills/
+production_spools/
+private/

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAP_ISU_BILL version="1.0">
+  <HEADER>
+    <OPBEL>10000005</OPBEL>
+    <BUKRS>ES01</BUKRS>
+    <PRINTDATE>15/11/2026</PRINTDATE>
+    <FAEDN>25/11/2026</FAEDN>
+    <VKONT>2000000127</VKONT>
+    <GPART>0001002349</GPART>
+    <CUPS>ES0021000000000005IJ</CUPS>
+    <TARIFF>3.0TD</TARIFF>
+    <CUSTOMER_NAME>TALLERES METALURGICOS SA</CUSTOMER_NAME>
+    <TOTAL_AMNT>1340.09</TOTAL_AMNT>
+    <TAX_BASE>1107.51</TAX_BASE>
+  </HEADER>
+  <LINES>
+    <POWER_ITEM period="P1" kw="35.000" days="30" price="0.054320" total="57.04"/>
+    <POWER_ITEM period="P2" kw="35.000" days="30" price="0.032110" total="33.72"/>
+    <POWER_ITEM period="P3" kw="35.000" days="30" price="0.021050" total="22.10"/>
+    <POWER_ITEM period="P4" kw="35.000" days="30" price="0.018400" total="19.32"/>
+    <POWER_ITEM period="P5" kw="35.000" days="30" price="0.012500" total="13.13"/>
+    <POWER_ITEM period="P6" kw="35.000" days="30" price="0.008200" total="8.61"/>
+    <ENERGY_ITEM period="P1" kwh="1200.0" price="0.221000" total="265.20"/>
+    <ENERGY_ITEM period="P2" kwh="950.0" price="0.198500" total="188.58"/>
+    <ENERGY_ITEM period="P3" kwh="800.0" price="0.165400" total="132.32"/>
+    <ENERGY_ITEM period="P4" kwh="750.0" price="0.142000" total="106.50"/>
+    <ENERGY_ITEM period="P5" kwh="600.0" price="0.119000" total="71.40"/>
+    <ENERGY_ITEM period="P6" kwh="1500.0" price="0.089500" total="134.25"/>
+    <TAX_ITEM type="IEE" rate="0.051127" amount="53.79"/>
+    <BONO_SOCIAL>0.19</BONO_SOCIAL>
+    <METER_RENTAL>1.36</METER_RENTAL>
+    <TAX_ITEM type="IVA" rate="0.21" amount="232.58"/>
+  </LINES>
+  <SPOOL_INFO>
+    <SPOOL_ID>SPOOL_000284705</SPOOL_ID>
+    <TIMESTAMP>15.11.2026 16:45:09</TIMESTAMP>
+    <FORM>ZISU_BILL_ES_20TD</FORM>
+  </SPOOL_INFO>
+</SAP_ISU_BILL>

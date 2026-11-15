@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAP_ISU_BILL version="1.0">
+  <HEADER>
+    <OPBEL>10000007</OPBEL>
+    <BUKRS>ES01</BUKRS>
+    <PRINTDATE>15/11/2026</PRINTDATE>
+    <FAEDN>25/11/2026</FAEDN>
+    <VKONT>2000000129</VKONT>
+    <GPART>0001002351</GPART>
+    <CUPS>ES0021000000000007MN</CUPS>
+    <TARIFF>2.0TD</TARIFF>
+    <CUSTOMER_NAME>FRANCISCO JAVIER LOPEZ</CUSTOMER_NAME>
+    <TOTAL_AMNT>73.00</TOTAL_AMNT>
+    <TAX_BASE>60.33</TAX_BASE>
+  </HEADER>
+  <LINES>
+    <POWER_ITEM period="P1" kw="4.600" days="30" price="0.082245" total="11.35"/>
+    <POWER_ITEM period="P2" kw="4.600" days="30" price="0.015320" total="2.11"/>
+    <ENERGY_ITEM period="P1" kwh="140.0" price="0.185200" total="25.93"/>
+    <ENERGY_ITEM period="P2" kwh="120.0" price="0.142100" total="17.05"/>
+    <TAX_ITEM type="IEE" rate="0.051127" amount="2.89"/>
+    <BONO_SOCIAL>0.19</BONO_SOCIAL>
+    <METER_RENTAL>0.81</METER_RENTAL>
+    <TAX_ITEM type="IVA" rate="0.21" amount="12.67"/>
+  </LINES>
+  <SPOOL_INFO>
+    <SPOOL_ID>SPOOL_000284707</SPOOL_ID>
+    <TIMESTAMP>15.11.2026 16:45:09</TIMESTAMP>
+    <FORM>ZISU_BILL_ES_20TD</FORM>
+  </SPOOL_INFO>
+</SAP_ISU_BILL>

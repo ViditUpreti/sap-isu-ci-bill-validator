@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAP_ISU_BILL version="1.0">
+  <HEADER>
+    <OPBEL>10000002</OPBEL>
+    <BUKRS>ES01</BUKRS>
+    <PRINTDATE>15/11/2026</PRINTDATE>
+    <FAEDN>25/11/2026</FAEDN>
+    <VKONT>2000000124</VKONT>
+    <GPART>0001002346</GPART>
+    <CUPS>ES0021000000000002CD</CUPS>
+    <TARIFF>2.0TD</TARIFF>
+    <CUSTOMER_NAME>PANADERIA ARTESANA SL</CUSTOMER_NAME>
+    <TOTAL_AMNT>201.03</TOTAL_AMNT>
+    <TAX_BASE>182.75</TAX_BASE>
+  </HEADER>
+  <LINES>
+    <POWER_ITEM period="P1" kw="9.200" days="30" price="0.082245" total="22.70"/>
+    <POWER_ITEM period="P2" kw="9.200" days="30" price="0.015320" total="4.23"/>
+    <ENERGY_ITEM period="P1" kwh="350.0" price="0.185200" total="64.82"/>
+    <ENERGY_ITEM period="P2" kwh="280.0" price="0.142100" total="39.79"/>
+    <ENERGY_ITEM period="P3" kwh="420.0" price="0.098500" total="41.37"/>
+    <TAX_ITEM type="IEE" rate="0.051127" amount="8.84"/>
+    <BONO_SOCIAL>0.19</BONO_SOCIAL>
+    <METER_RENTAL>0.81</METER_RENTAL>
+    <TAX_ITEM type="IVA" rate="0.10" amount="18.28"/>
+  </LINES>
+  <SPOOL_INFO>
+    <SPOOL_ID>SPOOL_000284702</SPOOL_ID>
+    <TIMESTAMP>15.11.2026 16:45:09</TIMESTAMP>
+    <FORM>ZISU_BILL_ES_20TD</FORM>
+  </SPOOL_INFO>
+</SAP_ISU_BILL>

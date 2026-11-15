@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAP_ISU_BILL version="1.0">
+  <HEADER>
+    <OPBEL>10000001</OPBEL>
+    <BUKRS>ES01</BUKRS>
+    <PRINTDATE>15/11/2026</PRINTDATE>
+    <FAEDN>25/11/2026</FAEDN>
+    <VKONT>2000000123</VKONT>
+    <GPART>0001002345</GPART>
+    <CUPS>ES0021000000000001AB</CUPS>
+    <TARIFF>2.0TD</TARIFF>
+    <CUSTOMER_NAME>CARLOS MARTINEZ GARCIA</CUSTOMER_NAME>
+    <TOTAL_AMNT>85.27</TOTAL_AMNT>
+    <TAX_BASE>70.47</TAX_BASE>
+  </HEADER>
+  <LINES>
+    <POWER_ITEM period="P1" kw="4.600" days="30" price="0.082245" total="11.35"/>
+    <POWER_ITEM period="P2" kw="4.600" days="30" price="0.015320" total="2.11"/>
+    <ENERGY_ITEM period="P1" kwh="120.0" price="0.185200" total="22.22"/>
+    <ENERGY_ITEM period="P2" kwh="110.0" price="0.142100" total="15.63"/>
+    <ENERGY_ITEM period="P3" kwh="150.0" price="0.098500" total="14.78"/>
+    <TAX_ITEM type="IEE" rate="0.051127" amount="3.38"/>
+    <BONO_SOCIAL>0.19</BONO_SOCIAL>
+    <METER_RENTAL>0.81</METER_RENTAL>
+    <TAX_ITEM type="IVA" rate="0.21" amount="14.80"/>
+  </LINES>
+  <SPOOL_INFO>
+    <SPOOL_ID>SPOOL_000284701</SPOOL_ID>
+    <TIMESTAMP>15.11.2026 16:45:09</TIMESTAMP>
+    <FORM>ZISU_BILL_ES_20TD</FORM>
+  </SPOOL_INFO>
+</SAP_ISU_BILL>

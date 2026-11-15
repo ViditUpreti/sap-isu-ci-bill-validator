@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAP_ISU_BILL version="1.0">
+  <HEADER>
+    <OPBEL>10000004</OPBEL>
+    <BUKRS>ES01</BUKRS>
+    <PRINTDATE>15/11/2026</PRINTDATE>
+    <FAEDN>25/11/2026</FAEDN>
+    <VKONT>2000000126</VKONT>
+    <GPART>0001002348</GPART>
+    <CUPS>ES0021000000000004GH</CUPS>
+    <TARIFF>2.0TD</TARIFF>
+    <CUSTOMER_NAME>MARIA DOLORES RUIZ</CUSTOMER_NAME>
+    <TOTAL_AMNT>61.90</TOTAL_AMNT>
+    <TAX_BASE>51.16</TAX_BASE>
+  </HEADER>
+  <LINES>
+    <POWER_ITEM period="P1" kw="3.450" days="30" price="0.082245" total="8.51"/>
+    <POWER_ITEM period="P2" kw="3.450" days="30" price="0.015320" total="1.59"/>
+    <ENERGY_ITEM period="P1" kwh="85.0" price="0.185200" total="15.74"/>
+    <ENERGY_ITEM period="P2" kwh="75.0" price="0.142100" total="10.66"/>
+    <ENERGY_ITEM period="P3" kwh="120.0" price="0.098500" total="11.82"/>
+    <TAX_ITEM type="IEE" rate="0.038000" amount="1.84"/>
+    <BONO_SOCIAL>0.19</BONO_SOCIAL>
+    <METER_RENTAL>0.81</METER_RENTAL>
+    <TAX_ITEM type="IVA" rate="0.21" amount="10.74"/>
+  </LINES>
+  <SPOOL_INFO>
+    <SPOOL_ID>SPOOL_000284704</SPOOL_ID>
+    <TIMESTAMP>15.11.2026 16:45:09</TIMESTAMP>
+    <FORM>ZISU_BILL_ES_20TD</FORM>
+  </SPOOL_INFO>
+</SAP_ISU_BILL>

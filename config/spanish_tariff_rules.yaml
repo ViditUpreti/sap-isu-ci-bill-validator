@@ -1,0 +1,140 @@
+# ==============================================================================
+# SAP IS-U & CI Spanish Utility Tariff & Validation Configuration (CNMC / BOE)
+# ==============================================================================
+
+system:
+  edition: "Spain Utility Edition"
+  currency: "EUR"
+  currency_symbol: "€"
+  date_format: "%d/%m/%Y"
+  sap_mandt: "100"
+  default_bukrs: "ES01"
+
+tolerances:
+  amount_tolerance_eur: 0.01          # Allowed rounding difference for standard pass
+  outsorting_threshold_eur: 0.05      # Defect trigger for SAP IS-U outsorting (EASIB/EA05)
+  layout_shift_tolerance_pt: 2.5      # Bounding box displacement threshold in points
+  tax_rate_tolerance_pct: 0.0001      # Precision tolerance for tax percentage checks
+
+taxes:
+  iva:
+    standard_rate: 0.21               # Standard Spanish VAT (21%)
+    reduced_rate: 0.10                # Energy temporary reduced rate (10%)
+    super_reduced_rate: 0.05          # Special emergency rate (5%)
+    valid_rates: [0.05, 0.10, 0.21]
+  
+  iee:
+    # Impuesto Especial sobre la Electricidad (BOE Real Decreto-ley)
+    standard_rate: 0.0511269632       # Standard CNMC statutory rate (5.11269632%)
+    reduced_rate_2024: 0.025          # RD-ley 8/2023 transitional (2.5%)
+    reduced_rate_2024_q2: 0.038       # RD-ley transitional Q2 (3.8%)
+    minimum_emergency_rate: 0.005     # Emergency lowest rate (0.5%)
+    valid_rates: [0.005, 0.025, 0.038, 0.0511269632, 0.0511]
+    minimum_fee_per_mwh: 0.50         # Statutory minimum fee per MWh (0.5 €/MWh)
+
+  ieh_gas:
+    # Impuesto Especial sobre Hidrocarburos (Gas Natural)
+    rate_eur_per_kwh: 0.00234         # Standard rate €/kWh for natural gas
+
+regulatory_fees:
+  bono_social:
+    # Financiación Bono Social (Orden TED statutory rate)
+    annual_rate_per_point_eur: 2.2885 # Approx 0.006270 €/day
+    daily_rate_eur: 0.006270
+  
+  meter_rental:
+    # Alquiler de contador monofásico estándar (Resolución CNMC)
+    monthly_rate_monophase_eur: 0.81  # ~0.02663 €/day
+    monthly_rate_triphase_eur: 1.36   # ~0.04471 €/day
+
+tariffs:
+  "2.0TD":
+    description: "Tarifa Eléctrica Doméstica / Pyme <= 15 kW (Peajes y Cargos)"
+    type: "ELECTRICITY"
+    power_periods: ["P1", "P2"]
+    energy_periods: ["P1", "P2", "P3"]
+    default_power_prices_eur_kw_day:
+      P1: 0.082245
+      P2: 0.015320
+    default_energy_prices_eur_kwh:
+      P1: 0.185200   # Punta
+      P2: 0.142100   # Llano
+      P3: 0.098500   # Valle
+
+  "3.0TD":
+    description: "Tarifa Eléctrica No Doméstica > 15 kW (6 Periodos)"
+    type: "ELECTRICITY"
+    power_periods: ["P1", "P2", "P3", "P4", "P5", "P6"]
+    energy_periods: ["P1", "P2", "P3", "P4", "P5", "P6"]
+    default_power_prices_eur_kw_day:
+      P1: 0.054320
+      P2: 0.032110
+      P3: 0.021050
+      P4: 0.018400
+      P5: 0.012500
+      P6: 0.008200
+    default_energy_prices_eur_kwh:
+      P1: 0.221000
+      P2: 0.198500
+      P3: 0.165400
+      P4: 0.142000
+      P5: 0.119000
+      P6: 0.089500
+
+  "RL.1":
+    description: "Tarifa Gas Natural Individual <= 5.000 kWh/año"
+    type: "GAS"
+    fixed_term_eur_month: 5.25
+    variable_term_eur_kwh: 0.065200
+
+  "RL.2":
+    description: "Tarifa Gas Natural Individual 5.000 a 15.000 kWh/año (Agua Caliente + Calefacción)"
+    type: "GAS"
+    fixed_term_eur_month: 9.80
+    variable_term_eur_kwh: 0.058400
+
+regex_patterns:
+  cups: 'ES\d{16}[A-Z]{2}(?:[0-9A-Z]{2})?'
+  cif_nif: '[ABCDEFGHJNPQRSUVWXYZ]?\d{7,8}[A-Z0-9]'
+  invoice_number: '(?:[A-Z0-9]{2,4}[-/\s]?)?\d{8,12}'
+  vkont: '\b\d{10,12}\b'
+  gpart: '\b\d{10}\b'
+  iban: 'ES\d{2}[0-9A-Z]{20}'
+  spool_id: '(?:SPOOL[_\s\-]?\d+|SPOOLNO[_\s\-]?\d+|ORDEN[_\s\-]?\d+|SPOOL:\s*\d+)'
+  run_timestamp: '\b\d{2}[\/\.-]\d{2}[\/\.-]\d{4}\s+\d{2}:\d{2}(?::\d{2})?\b'
+  ads_session: 'ADS_[A-Z0-9_-]{12,32}'
+  page_counter: '(?:Página|Pag\.|Pág\.)\s*\d+\s*(?:de|\/)\s*\d+'
+
+dynamic_masking:
+  enabled: true
+  ignore_patterns:
+    - '(?i)spool[:\s_-]*\d+'
+    - '(?i)fecha\s+impresi[óo]n[:\s]*\d{2}[\/\.-]\d{2}[\/\.-]\d{4}'
+    - '(?i)hora\s+impresi[óo]n[:\s]*\d{2}:\d{2}(?::\d{2})?'
+    - '(?i)impreso\s+por[:\s]*\w+'
+    - '(?i)id\s+trabajo[:\s]*\w+'
+    - '(?i)ads_session_id[:\s]*[a-zA-Z0-9_-]+'
+    - '(?i)p[áa]gina\s+\d+\s+de\s+\d+'
+
+sap_table_mapping:
+  erdk:
+    key_fields: ["OPBEL"]
+    amount_field: "TOTAL_AMNT"
+    contract_account: "VKONT"
+    partner: "GPART"
+    form_field: "FORM"
+  dfkkinv_doc_h:
+    key_fields: ["INVDOCNO"]
+    amount_field: "TOTAL_AMNT"
+    contract_account: "VKONT"
+    partner: "GPART"
+  dfkkinv_doc_i:
+    key_fields: ["INVDOCNO", "INVDOCITEM"]
+    amount_field: "BETRW"
+    sub_ap_id_field: "SUB_AP_ID"
+    tax_code_field: "TAX_CODE"
+  dfkkop:
+    key_fields: ["OPBEL", "OPUPK"]
+    amount_field: "BETRW"
+    due_date_field: "FAEDN"
+    doc_type_field: "BLART"

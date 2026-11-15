@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAP_ISU_BILL version="1.0">
+  <HEADER>
+    <OPBEL>10000006</OPBEL>
+    <BUKRS>ES01</BUKRS>
+    <PRINTDATE>15/11/2026</PRINTDATE>
+    <FAEDN>25/11/2026</FAEDN>
+    <VKONT>2000000128</VKONT>
+    <GPART>0001002350</GPART>
+    <CUPS>ES0021000000000006KL</CUPS>
+    <TARIFF>3.0TD</TARIFF>
+    <CUSTOMER_NAME>LOGISTICA DEL SUR SL</CUSTOMER_NAME>
+    <TOTAL_AMNT>473.29</TOTAL_AMNT>
+    <TAX_BASE>391.15</TAX_BASE>
+  </HEADER>
+  <LINES>
+    <POWER_ITEM period="P1" kw="25.000" days="30" price="0.054320" total="40.74"/>
+    <POWER_ITEM period="P2" kw="25.000" days="30" price="0.032110" total="24.08"/>
+    <ENERGY_ITEM period="P1" kwh="800.0" price="0.221000" total="176.80"/>
+    <ENERGY_ITEM period="P2" kwh="650.0" price="0.198500" total="129.03"/>
+    <TAX_ITEM type="IEE" rate="0.051127" amount="18.95"/>
+    <BONO_SOCIAL>0.19</BONO_SOCIAL>
+    <METER_RENTAL>1.36</METER_RENTAL>
+    <TAX_ITEM type="IVA" rate="0.21" amount="82.14"/>
+  </LINES>
+  <SPOOL_INFO>
+    <SPOOL_ID>SPOOL_000284706</SPOOL_ID>
+    <TIMESTAMP>15.11.2026 16:45:09</TIMESTAMP>
+    <FORM>ZISU_BILL_ES_20TD</FORM>
+  </SPOOL_INFO>
+</SAP_ISU_BILL>
